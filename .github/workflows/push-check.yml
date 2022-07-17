@@ -1,0 +1,17 @@
+name: push-check
+
+on: push
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build docker image
+        run: make build
+
+      - name: Docker login
+        run: docker login --username=${{ secrets.DOCKER_ID }} --password=${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push docker image
+        run: make push
