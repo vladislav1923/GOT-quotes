@@ -7,9 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Code linting
-        run: make lint
-
       - name: Build docker image
         run: make build
 
