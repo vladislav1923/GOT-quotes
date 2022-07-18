@@ -2,18 +2,13 @@ name: push-check
 
 on: push
 jobs:
-  quality:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Linting
-        run: cd app; npm run lint
-  
   ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Code linting
+        run: make lint
 
       - name: Build docker image
         run: make build
