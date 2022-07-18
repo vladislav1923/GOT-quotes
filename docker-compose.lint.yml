@@ -5,3 +5,5 @@ services:
       context: app
       dockerfile: ../Dockerfile.dev
     command: bash -c 'npm run lint'
+    volumes:
+      - "./app:/app"
