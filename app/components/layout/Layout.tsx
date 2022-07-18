@@ -2,12 +2,14 @@ import styles from './layout.module.css';
 import Head from "next/head";
 import React from "react";
 import Header from "../header/Header";
+import {BackgroundColorsEnum} from "../../enums/background-colors.enum";
 
 type Props = {
-  children: React.ReactNode;
+    children: React.ReactNode;
+    bgColor: BackgroundColorsEnum;
 };
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, bgColor }: Props) {
     return (
         <>
             <Head>
@@ -19,7 +21,7 @@ export default function Layout({ children }: Props) {
                 <link rel="manifest" href="/favs/site.webmanifest" />
             </Head>
             <div className={styles.container}>
-                <Header />
+                <Header bgColor={bgColor} />
                 <main>{ children }</main>
             {/*    footer */}
             </div>

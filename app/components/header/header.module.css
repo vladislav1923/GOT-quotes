@@ -7,13 +7,21 @@
 }
 
 .title {
-    font-family: 'GOT-regular', sans-serif;
+    font-family: var(--got-font), sans-serif;
     font-size: 32px;
 }
 
 .desc {
-    font-family: 'cormorant-regular', sans-serif;
+    font-family: var(--primary-reg-font), sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 0;
+}
+
+.blackFontColor {
+    color: var(--black-color);
+}
+
+.whiteFontColor {
+    color: var(--white-color);
 }
