@@ -2,11 +2,12 @@ import styles from './header.module.css';
 import { BackgroundColorsEnum } from '../../enums/background-colors.enum';
 
 type Props = {
-    bgColor: BackgroundColorsEnum;
-}
+  bgColor: BackgroundColorsEnum;
+};
 
 export default function Header({ bgColor }: Props) {
-  const fontColorClassName = bgColor === BackgroundColorsEnum.Black ? styles.whiteFontColor : styles.blackFontColor;
+  const fontColorClassName = bgColor === BackgroundColorsEnum.Black
+    ? styles.whiteFontColor : styles.blackFontColor;
 
   return (
     <header className={styles.container}>
