@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: app
-      dockerfile: ../Dockerfile.dev
+      dockerfile: ../Dockerfile
     command: bash -c 'npm run test'
     ports:
       - "3000:3000"
