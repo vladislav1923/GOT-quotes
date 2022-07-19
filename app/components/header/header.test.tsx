@@ -21,6 +21,6 @@ describe('Header', () => {
     const descElement = container.getElementsByClassName(styles.desc)[0];
 
     expect(titleElement).toHaveClass(styles.whiteFontColor);
-    expect(descElement).toHaveClass(styles.blackFontColor);
+    expect(descElement).toHaveClass(styles.whiteFontColor);
   });
 });
