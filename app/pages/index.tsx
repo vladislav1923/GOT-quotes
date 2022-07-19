@@ -1,14 +1,15 @@
 import Layout from '../components/layout/Layout';
-import { BackgroundColorsEnum } from '../enums/background-colors.enum';
+import Home from '../components/home/Home';
+import BackgroundColorsEnum from '../enums/background-colors.enum';
 
-function Home() {
+function Index() {
   const bgColor = BackgroundColorsEnum.White;
 
   return (
     <Layout bgColor={bgColor}>
-      Hello world
+      <Home />
     </Layout>
   );
 }
 
-export default Home;
+export default Index;

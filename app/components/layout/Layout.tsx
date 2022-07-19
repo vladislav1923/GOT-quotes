@@ -2,7 +2,8 @@ import Head from 'next/head';
 import React from 'react';
 import styles from './layout.module.css';
 import Header from '../header/Header';
-import { BackgroundColorsEnum } from '../../enums/background-colors.enum';
+import BackgroundColorsEnum from '../../enums/background-colors.enum';
+import Footer from '../footer/Footer';
 
 type Props = {
   children: React.ReactNode;
@@ -22,8 +23,8 @@ export default function Layout({ children, bgColor }: Props) {
       </Head>
       <div className={styles.container}>
         <Header bgColor={bgColor} />
-        <main>{ children }</main>
-        {/*    footer */}
+        <main className={styles.main}>{ children }</main>
+        <Footer />
       </div>
     </>
 

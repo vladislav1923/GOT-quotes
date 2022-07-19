@@ -1,4 +1,6 @@
-export enum BackgroundColorsEnum {
-    White = 'white',
-    Black = 'black',
+enum BackgroundColorsEnum {
+  White = 'white',
+  Black = 'black',
 }
+
+export default BackgroundColorsEnum;

@@ -1,5 +1,5 @@
 import styles from './header.module.css';
-import { BackgroundColorsEnum } from '../../enums/background-colors.enum';
+import BackgroundColorsEnum from '../../enums/background-colors.enum';
 
 type Props = {
   bgColor: BackgroundColorsEnum;

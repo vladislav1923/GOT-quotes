@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Header from './Header';
 import styles from './header.module.css';
-import { BackgroundColorsEnum } from '../../enums/background-colors.enum';
+import BackgroundColorsEnum from '../../enums/background-colors.enum';
 
 describe('Header', () => {
   it('should set black color to texts if bg is white', () => {

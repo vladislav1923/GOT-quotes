@@ -1,0 +1,24 @@
+.button {
+    border: 2px solid var(--black-color);
+    font-family: var(--primary-reg-font);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.mediumSize {
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+.largeSize {
+    font-size: 24px;
+    padding: 24px 32px;
+}
+
+.fireColor {
+    background-color: var(--fire-color);
+}
+
+.iceColor {
+    background-color: var(--ice-color);
+}

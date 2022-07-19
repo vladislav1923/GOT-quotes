@@ -1,0 +1,28 @@
+import React, { SyntheticEvent } from 'react';
+import styles from './button.module.css';
+import ButtonSizesEnum from '../../enums/button-sizes.enum';
+import ButtonColorsEnum from '../../enums/button-colors.enum';
+
+type Props = {
+  children: React.ReactNode;
+  size: ButtonSizesEnum;
+  color: ButtonColorsEnum;
+  onClick: (e: SyntheticEvent) => void;
+};
+
+export default function Button({
+  children, size, color, onClick,
+}: Props) {
+  const sizeClassName = size === ButtonSizesEnum.Medium ? styles.mediumSize : styles.largeSize;
+  const colorClassName = color === ButtonColorsEnum.Fire ? styles.fireColor : styles.iceColor;
+
+  return (
+    <button
+      type="button"
+      className={`${styles.button} ${sizeClassName} ${colorClassName}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
