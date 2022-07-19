@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ToggleTheme, { Theme } from 'react-toggle-theme';
 import styles from './footer.module.css';
 
 export default function Footer() {
@@ -15,7 +16,16 @@ export default function Footer() {
           API
         </a>
       </span>
-      <Image src="/logo.png" alt="Logo" width={32} height={32} />
+      <div className={styles.buttons}>
+        <ToggleTheme selectedTheme={Theme.LIGHT} onChange={() => console.log('hi')} />
+        <a
+          href="https://github.com/vladislav1923/gqt"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src="/logo.png" alt="Logo" width={32} height={32} />
+        </a>
+      </div>
     </footer>
   );
 }
