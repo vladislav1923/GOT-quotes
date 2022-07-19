@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm ci --include=dev
+RUN npm i
