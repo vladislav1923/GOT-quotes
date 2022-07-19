@@ -19,3 +19,6 @@
 
 ### Build docker image
 `make build`
+
+### Run tests
+`make test`

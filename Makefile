@@ -9,3 +9,6 @@ build:
 
 push:
 	docker-compose -f docker-compose.yml push app
+
+test:
+	docker-compose -f docker-compose.test.yml up app

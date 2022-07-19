@@ -7,6 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Run tests
+        run: make test
+
       - name: Build docker image
         run: make build
 
