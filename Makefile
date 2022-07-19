@@ -11,4 +11,4 @@ push:
 	docker-compose -f docker-compose.yml push app
 
 test:
-	docker-compose -f docker-compose.test.yml up app
+	docker-compose -f docker-compose.test.yml up --abort-on-container-exit --exit-code-from app

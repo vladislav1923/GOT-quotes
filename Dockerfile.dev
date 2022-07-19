@@ -4,5 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-# TODO: RUN npm ci
-RUN npm i
+RUN npm ci
