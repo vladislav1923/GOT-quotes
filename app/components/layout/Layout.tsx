@@ -1,16 +1,21 @@
 import Head from 'next/head';
 import React from 'react';
+import { Theme } from 'react-toggle-theme';
+import { observer } from 'mobx-react-lite';
 import styles from './layout.module.css';
 import Header from '../header/Header';
-import BackgroundColorsEnum from '../../enums/background-colors.enum';
 import Footer from '../footer/Footer';
+import { IStore, useStore } from '../../store/store';
 
 type Props = {
+  // eslint-disable-next-line react/require-default-props
+  store?: IStore;
   children: React.ReactNode;
-  bgColor: BackgroundColorsEnum;
 };
 
-export default function Layout({ children, bgColor }: Props) {
+const Layout = observer(({ store, children }: Props) => {
+  const { theme } = useStore(store);
+  const themeClassName = theme === Theme.LIGHT ? styles.lightTheme : styles.darkTheme;
   return (
     <>
       <Head>
@@ -21,12 +26,14 @@ export default function Layout({ children, bgColor }: Props) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favs/favicon-16x16.png" />
         <link rel="manifest" href="/favs/site.webmanifest" />
       </Head>
-      <div className={styles.container}>
-        <Header bgColor={bgColor} />
+      <div className={`${styles.container} ${themeClassName}`}>
+        <Header theme={theme as Theme} />
         <main className={styles.main}>{ children }</main>
-        <Footer />
+        <Footer store={store} />
       </div>
     </>
 
   );
-}
+});
+
+export default Layout;

@@ -4,6 +4,14 @@
     min-height: 100vh;
 }
 
+.lightTheme {
+    background-color: var(--white-color);
+}
+
+.darkTheme {
+    background-color: var(--black-color);
+}
+
 .main {
     flex-grow: 1;
 }

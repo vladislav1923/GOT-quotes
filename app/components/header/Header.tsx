@@ -1,13 +1,13 @@
+import { Theme } from 'react-toggle-theme';
 import styles from './header.module.css';
-import BackgroundColorsEnum from '../../enums/background-colors.enum';
 
 type Props = {
-  bgColor: BackgroundColorsEnum;
+  theme: Theme;
 };
 
-export default function Header({ bgColor }: Props) {
-  const fontColorClassName = bgColor === BackgroundColorsEnum.Black
-    ? styles.whiteFontColor : styles.blackFontColor;
+export default function Header({ theme }: Props) {
+  const fontColorClassName = theme === Theme.LIGHT
+    ? styles.blackFontColor : styles.whiteFontColor;
 
   return (
     <header className={styles.container}>
