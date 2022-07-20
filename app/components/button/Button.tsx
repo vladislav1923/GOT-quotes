@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
   size: ButtonSizesEnum;
   color: ButtonColorsEnum;
-  onClick: (e: SyntheticEvent) => void;
+  onClick?: (e: SyntheticEvent) => void;
 };
 
 export default function Button({
@@ -16,11 +16,17 @@ export default function Button({
   const sizeClassName = size === ButtonSizesEnum.Medium ? styles.mediumSize : styles.largeSize;
   const colorClassName = color === ButtonColorsEnum.Fire ? styles.fireColor : styles.iceColor;
 
+  const clickHandler = (e: SyntheticEvent) => {
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <button
       type="button"
       className={`${styles.button} ${sizeClassName} ${colorClassName}`}
-      onClick={onClick}
+      onClick={clickHandler}
     >
       {children}
     </button>

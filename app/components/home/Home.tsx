@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './home.module.css';
 import Button from '../button/Button';
 import ButtonSizesEnum from '../../enums/button-sizes.enum';
@@ -14,14 +15,14 @@ export default function Home() {
           illo natus nulla placeat quis?
         </p>
         <div className={styles.fork}>
-          <Button
-            size={ButtonSizesEnum.Medium}
-            color={ButtonColorsEnum.Fire}
-            onClick={() => console.log('hi')}
-          >
-            Go to Character Selection
-          </Button>
-          {/*  button */}
+          <Link href="/characters">
+            <Button
+              size={ButtonSizesEnum.Medium}
+              color={ButtonColorsEnum.Fire}
+            >
+              Go to Character Selection
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

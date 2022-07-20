@@ -5,7 +5,6 @@ import styles from './footer.module.css';
 import { State, useStore } from '../../store/store';
 
 type Props = {
-  // eslint-disable-next-line react/require-default-props
   store?: State;
 };
 

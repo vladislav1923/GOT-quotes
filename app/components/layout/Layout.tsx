@@ -8,7 +8,6 @@ import Footer from '../footer/Footer';
 import { State, useStore } from '../../store/store';
 
 type Props = {
-  // eslint-disable-next-line react/require-default-props
   store?: State;
   children: React.ReactNode;
 };

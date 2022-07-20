@@ -1,0 +1,43 @@
+.container {
+    position: relative;
+    width: 180px;
+    height: 280px;
+    cursor: pointer;
+}
+
+.container:hover .layer {
+    display: flex;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8px;
+    background-color: var(--white-color);
+    opacity: .8;
+}
+
+.name {
+    font-family: var(--primary-reg-font);
+    font-size: 24px;
+    color: var(--black-color);
+    line-height: 24px;
+    margin: 0 0 16px 0;
+}
+
+.link {
+    font-family: var(--primary-light-font);
+    font-size: 16px;
+    color: var(--blue-color);
+}
+
+.link:hover {
+    text-decoration: underline;
+}

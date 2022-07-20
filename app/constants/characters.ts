@@ -1,0 +1,192 @@
+import Character from '../interfaces/Character';
+
+const Characters: Character[] = [
+  {
+    id: 'aemon_targaryen',
+    name: 'Aemon Targaryen',
+    image: '/characters/aemon_targaryen.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Aemon',
+  },
+  {
+    id: 'arya_stark',
+    name: 'Arya Stark',
+    image: '/characters/arya_stark.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Arya_Stark',
+  },
+  {
+    id: 'barristan_selmy',
+    name: 'Barristan Selmy',
+    image: '/characters/barristan_selmy.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Barristan_Selmy',
+  },
+  {
+    id: 'brienne_of_tarth',
+    name: 'Brienne Of Tarth',
+    image: '/characters/brienne_of_tarth.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Brienne_of_Tarth',
+  },
+  {
+    id: 'bronn',
+    name: 'Bronn',
+    image: '/characters/bronn.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Bronn',
+  },
+  {
+    id: 'catelyn_stark',
+    name: 'Catelyn Stark',
+    image: '/characters/catelyn_stark.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Catelyn_Stark',
+  },
+  {
+    id: 'cersei_lannister',
+    name: 'Cersei Lannister',
+    image: '/characters/cersei_lannister.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Cersei_Lannister',
+  },
+  {
+    id: 'commander_mormont',
+    name: 'Jeor Mormont',
+    image: '/characters/commander_mormont.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Jeor_Mormont',
+  },
+  {
+    id: 'daenerys_targaryen',
+    name: 'Daenerys Targaryen',
+    image: '/characters/daenerys_targaryen.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Daenerys_Targaryen',
+  },
+  {
+    id: 'davos_seaworth',
+    name: 'Davos Seaworth',
+    image: '/characters/davos_seaworth.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Davos_Seaworth',
+  },
+  {
+    id: 'ellaria_sand',
+    name: 'Ellaria Sand',
+    image: '/characters/ellaria_sand.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Ellaria_Sand',
+  },
+  {
+    id: 'jojen_reed',
+    name: 'Jojen Reed',
+    image: '/characters/jojen_reed.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Jojen_Reed',
+  },
+  {
+    id: 'jon_snow',
+    name: 'Jon Snow',
+    image: '/characters/jon_snow.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Jon_Snow',
+  },
+  {
+    id: 'jorah_mormont',
+    name: 'Jorah Mormont',
+    image: '/characters/jorah_mormont.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Jorah_Mormont',
+  },
+  {
+    id: 'lord_varys',
+    name: 'Varys',
+    image: '/characters/lord_varys.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Varys',
+  },
+  {
+    id: 'lyanna_mormont',
+    name: 'Lyanna Mormont',
+    image: '/characters/lyanna_mormont.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Lyanna_Mormont',
+  },
+  {
+    id: 'melisandre',
+    name: 'Melisandre',
+    image: '/characters/melisandre.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Melisandre',
+  },
+  {
+    id: 'ned_stark',
+    name: 'Eddard Stark',
+    image: '/characters/ned_stark.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Eddard_Stark',
+  },
+  {
+    id: 'oberyn_martell',
+    name: 'Oberyn Martell',
+    image: '/characters/oberyn_martell.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Oberyn_Martell',
+  },
+  {
+    id: 'olenna_tyrell',
+    name: 'Olenna Tyrell',
+    image: '/characters/olenna_tyrell.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Olenna_Tyrell',
+  },
+  {
+    id: 'orell',
+    name: 'Orell',
+    image: '/characters/orell.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Orell',
+  },
+  {
+    id: 'petyr_baelish',
+    name: 'Petyr Baelish',
+    image: '/characters/petyr_baelish.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Petyr_Baelish',
+  },
+  {
+    id: 'ramsay_bolton',
+    name: 'Ramsay Bolton',
+    image: '/characters/ramsay_bolton.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Ramsay_Bolton',
+  },
+  {
+    id: 'robert_baratheon',
+    name: 'Robert Baratheon',
+    image: '/characters/robert_baratheon.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Robert_Baratheon',
+  },
+  {
+    id: 'samwell_tarly',
+    name: 'Samwell Tarly',
+    image: '/characters/samwell_tarly.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Samwell_Tarly',
+  },
+  {
+    id: 'sansa_stark',
+    name: 'Sansa Stark',
+    image: '/characters/sansa_stark.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Sansa_Stark',
+  },
+  {
+    id: 'stannis_baratheon',
+    name: 'Stannis Baratheon',
+    image: '/characters/stannis_baratheon.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Stannis_Baratheon',
+  },
+  {
+    id: 'syrio_forel',
+    name: 'Syrio Forel',
+    image: '/characters/syrio_forel.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Syrio_Forel',
+  },
+  {
+    id: 'tyrion_lannister',
+    name: 'Tyrion Lannister',
+    image: '/characters/tyrion_lannister.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Tyrion_Lannister',
+  },
+  {
+    id: 'tywin_lannister',
+    name: 'Tywin Lannister',
+    image: '/characters/tywin_lannister.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Tywin_Lannister',
+  },
+  {
+    id: 'ygritte',
+    name: 'Ygritte',
+    image: '/characters/ygritte.webp',
+    fandomUrl: 'https://gameofthrones.fandom.com/wiki/Ygritte',
+  },
+];
+
+export default Characters;
