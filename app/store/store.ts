@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import {
-  applySnapshot, Instance, SnapshotIn, SnapshotOut, types,
+  applySnapshot, Instance, types,
 } from 'mobx-state-tree';
 import { Theme } from 'react-toggle-theme';
 
-let store: IStore | undefined;
+let store: State | undefined;
 
 const Store = types
   .model({
@@ -18,9 +18,7 @@ const Store = types
     return { update };
   });
 
-export type IStore = Instance<typeof Store>;
-export type IStoreSnapshotIn = SnapshotIn<typeof Store>;
-export type IStoreSnapshotOut = SnapshotOut<typeof Store>;
+export type State = Instance<typeof Store>;
 
 export function initializeStore(snapshot = null) {
   // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle

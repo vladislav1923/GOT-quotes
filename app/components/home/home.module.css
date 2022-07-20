@@ -12,7 +12,7 @@
 .desc {
     font-family: var(--primary-light-font);
     font-size: 16px;
-    color: var(--black-color);
+    color: var(--font-theme-color);
     margin-bottom: 40px;
 }
 

@@ -9,14 +9,7 @@
 .copyright {
     font-family: var(--primary-light-font);
     font-size: 16px;
-}
-
-.whiteColor {
-    color: var(--white-color);
-}
-
-.blackColor {
-    color: var(--black-color);
+    color: var(--font-theme-color);
 }
 
 .link {

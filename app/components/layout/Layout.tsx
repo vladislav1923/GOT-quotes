@@ -5,11 +5,11 @@ import { observer } from 'mobx-react-lite';
 import styles from './layout.module.css';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import { IStore, useStore } from '../../store/store';
+import { State, useStore } from '../../store/store';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
-  store?: IStore;
+  store?: State;
   children: React.ReactNode;
 };
 
@@ -27,7 +27,7 @@ const Layout = observer(({ store, children }: Props) => {
         <link rel="manifest" href="/favs/site.webmanifest" />
       </Head>
       <div className={`${styles.container} ${themeClassName}`}>
-        <Header theme={theme as Theme} />
+        <Header />
         <main className={styles.main}>{ children }</main>
         <Footer store={store} />
       </div>

@@ -2,20 +2,19 @@ import Image from 'next/image';
 import ToggleTheme, { Theme } from 'react-toggle-theme';
 import { observer } from 'mobx-react-lite';
 import styles from './footer.module.css';
-import { IStore, useStore } from '../../store/store';
+import { State, useStore } from '../../store/store';
 
 type Props = {
   // eslint-disable-next-line react/require-default-props
-  store?: IStore;
+  store?: State;
 };
 
 const Footer = observer(({ store }: Props) => {
   const { theme, update } = useStore(store);
-  const fontColorClassName = theme === Theme.LIGHT ? styles.blackColor : styles.whiteColor;
 
   return (
     <footer className={styles.container}>
-      <span className={`${styles.copyright} ${fontColorClassName}`}>
+      <span className={styles.copyright}>
         Powered by public&nbsp;
         <a
           className={styles.link}

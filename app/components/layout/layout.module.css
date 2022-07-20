@@ -2,14 +2,17 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--bg-theme-color);
 }
 
 .lightTheme {
-    background-color: var(--white-color);
+    --bg-theme-color: var(--white-color);
+    --font-theme-color: var(--black-color);
 }
 
 .darkTheme {
-    background-color: var(--black-color);
+    --bg-theme-color: var(--black-color);
+    --font-theme-color: var(--white-color);
 }
 
 .main {
