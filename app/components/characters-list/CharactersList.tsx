@@ -11,6 +11,7 @@ type Props = {
 
 const CharactersList = observer(({ store }: Props) => {
   const { theme, update } = useStore(store);
+  console.log(theme, update);
 
   return (
     <ul className={styles.list}>
