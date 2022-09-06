@@ -1,0 +1,43 @@
+@mixin isMobile() {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin appTitleFont() {
+  font-family: var(--got-font), sans-serif;
+  font-size: 32px;
+  line-height: 36px;
+  color: var(--font-theme-color);
+
+  @include isMobile() {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@mixin mediumFont() {
+  font-family: var(--primary-reg-font), sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--font-theme-color);
+
+  @include isMobile {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@mixin regularFont() {
+  font-family: var(--primary-light-font), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--font-theme-color);
+
+  @include isMobile {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

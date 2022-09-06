@@ -1,8 +1,15 @@
+@import "styles/mixins";
+
 .container {
     position: relative;
     width: 180px;
     height: 280px;
     cursor: pointer;
+
+    @include isMobile {
+        width: 120px;
+        height: 180px;
+    }
 }
 
 .container:hover .layer {
@@ -25,16 +32,13 @@
 }
 
 .name {
-    font-family: var(--primary-reg-font);
-    font-size: 24px;
+    @include mediumFont();
     color: var(--black-color);
-    line-height: 24px;
     margin: 0 0 16px 0;
 }
 
 .link {
-    font-family: var(--primary-light-font);
-    font-size: 16px;
+    @include regularFont();
     color: var(--blue-color);
 }
 

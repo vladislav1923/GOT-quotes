@@ -1,0 +1,17 @@
+@import "styles/mixins";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.title {
+    @include appTitleFont();
+}
+
+.desc {
+    @include mediumFont();
+}

@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from 'react';
-import styles from './button.module.css';
+import styles from './button.module.scss';
 import ButtonSizesEnum from '../../enums/button-sizes.enum';
 import ButtonColorsEnum from '../../enums/button-colors.enum';
 

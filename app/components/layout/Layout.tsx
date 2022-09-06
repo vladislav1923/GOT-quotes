@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import { Theme } from 'react-toggle-theme';
 import { observer } from 'mobx-react-lite';
-import styles from './layout.module.css';
+import styles from './layout.module.scss';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { State, useStore } from '../../store/store';

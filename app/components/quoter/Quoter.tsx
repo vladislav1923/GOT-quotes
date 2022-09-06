@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './quoter.module.css';
+import styles from './quoter.module.scss';
 import Character from '../../interfaces/character';
 
 type Props = {
@@ -14,6 +14,7 @@ function Quoter({ character }: Props) {
       <Image src={image} height={160} width={100} />
       <div className={styles.quoterInfo}>
         <h1 className={styles.quoterName}>{ character?.name }</h1>
+        <a href={character?.fandomUrl} className={styles.quoterLink} target="_blank" rel="noreferrer">More information</a>
       </div>
     </div>
   );

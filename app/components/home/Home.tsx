@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './home.module.css';
+import styles from './home.module.scss';
 import Button from '../button/Button';
 import ButtonSizesEnum from '../../enums/button-sizes.enum';
 import ButtonColorsEnum from '../../enums/button-colors.enum';

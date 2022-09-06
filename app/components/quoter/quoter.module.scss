@@ -1,0 +1,18 @@
+@import "styles/mixins";
+
+.quoter {
+    display: flex;
+}
+
+.quoterInfo {
+    margin-left: 16px;
+}
+
+.quoterName {
+    @include mediumFont();
+}
+
+.quoterLink {
+    @include regularFont();
+    color: var(--blue-color);
+}

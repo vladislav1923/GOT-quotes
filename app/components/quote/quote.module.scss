@@ -1,0 +1,10 @@
+@import "styles/mixins";
+
+.quote {
+    @include regularFont();
+}
+
+.mark {
+    font-size: 24px;
+    color: var(--gray-color);
+}

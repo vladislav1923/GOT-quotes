@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CharacterPreview from '../character-preview/CharacterPreview';
 import CHARACTERS from '../../constants/characters';
 import Character from '../../interfaces/character';
-import styles from './characters-list.module.css';
+import styles from './characters-list.module.scss';
 
 const CharactersList = observer(() => (
   <ul className={styles.list}>

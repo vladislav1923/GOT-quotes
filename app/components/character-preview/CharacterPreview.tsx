@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { SyntheticEvent } from 'react';
 import { useRouter } from 'next/router';
-import styles from './character-preview.module.css';
+import styles from './character-preview.module.scss';
 import Character from '../../interfaces/character';
 
 type Props = {

@@ -1,9 +1,4 @@
-.quotesListBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .quotesList {
     list-style: none;
+    padding: 0;
 }

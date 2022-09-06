@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ToggleTheme, { Theme } from 'react-toggle-theme';
 import { observer } from 'mobx-react-lite';
-import styles from './footer.module.css';
+import styles from './footer.module.scss';
 import { State, useStore } from '../../store/store';
 import API_SOURCE_URL from '../../constants/api-source-url';
 
