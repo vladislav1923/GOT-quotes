@@ -3,6 +3,7 @@ import ToggleTheme, { Theme } from 'react-toggle-theme';
 import { observer } from 'mobx-react-lite';
 import styles from './footer.module.css';
 import { State, useStore } from '../../store/store';
+import API_SOURCE_URL from '../../constants/api-source-url';
 
 type Props = {
   store?: State;
@@ -17,7 +18,7 @@ const Footer = observer(({ store }: Props) => {
         Powered by public&nbsp;
         <a
           className={styles.link}
-          href="https://rapidapi.com/apiwhiz/api/game-of-thrones-quotes/"
+          href={API_SOURCE_URL}
           target="_blank"
           rel="noreferrer"
         >

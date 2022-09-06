@@ -1,0 +1,15 @@
+.quoter {
+    display: flex;
+}
+
+.quoterInfo {
+    margin-left: 16px;
+}
+
+.quoterName {
+    font-family: var(--primary-reg-font), sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 0;
+    color: var(--font-theme-color);
+}

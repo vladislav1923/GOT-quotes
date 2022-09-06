@@ -1,27 +1,20 @@
 import { observer } from 'mobx-react-lite';
-import { State, useStore } from '../../store/store';
+import Link from 'next/link';
 import CharacterPreview from '../character-preview/CharacterPreview';
-import Characters from '../../constants/characters';
-import Character from '../../interfaces/Character';
+import CHARACTERS from '../../constants/characters';
+import Character from '../../interfaces/character';
 import styles from './characters-list.module.css';
 
-type Props = {
-  store?: State;
-};
-
-const CharactersList = observer(({ store }: Props) => {
-  const { theme, update } = useStore(store);
-  console.log(theme, update);
-
-  return (
-    <ul className={styles.list}>
-      {
-        Characters.map((character: Character) => (
-          <li key={character.id}><CharacterPreview character={character} /></li>
-        ))
-      }
-    </ul>
-  );
-});
+const CharactersList = observer(() => (
+  <ul className={styles.list}>
+    {
+      CHARACTERS.map((character: Character) => (
+        <Link key={character.id} href={`quotes/${character.id}`}>
+          <li><CharacterPreview character={character} /></li>
+        </Link>
+      ))
+    }
+  </ul>
+));
 
 export default CharactersList;

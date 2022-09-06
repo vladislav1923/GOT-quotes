@@ -9,6 +9,8 @@
     // allow jsx syntax in js files (for next.js project)
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "arrow-body-style": "off",
+    "import/prefer-default-export": "off"
   }
 }
