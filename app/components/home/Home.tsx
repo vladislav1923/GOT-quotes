@@ -9,10 +9,9 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.preview}>
         <p className={styles.desc}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Impedit iste magnam nemo non numquam. Assumenda commodi distinctio
-          doloribus ducimus mollitia nostrum officia porro veritatis. Eos
-          illo natus nulla placeat quis?
+          This website provides to you an ability to get access to the storage
+          of fairy collection of quotes from the greatest TV series named Game of Thrones.
+          Enjoy it just to click a button below
         </p>
         <div className={styles.fork}>
           <Link href="/characters">

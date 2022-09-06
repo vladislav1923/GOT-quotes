@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
     padding: 32px;
+
+    @include isMobile() {
+        align-items: flex-start;
+    }
 }
 
 .title {
