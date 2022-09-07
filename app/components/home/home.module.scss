@@ -5,6 +5,10 @@
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
+
+    @include isMobile {
+        margin: 0;
+    }
 }
 
 .preview {

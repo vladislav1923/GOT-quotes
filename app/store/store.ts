@@ -9,20 +9,25 @@ let store: State | undefined;
 const Store = types
   .model({
     theme: Theme.LIGHT,
+    isFeedback: false,
   })
   .actions((self) => {
-    const update = (theme: Theme) => {
+    const updateTheme = (theme: Theme) => {
       // eslint-disable-next-line no-param-reassign
       self.theme = theme;
     };
-    return { update };
+    const updateFeedback = (state: boolean) => {
+      // eslint-disable-next-line no-param-reassign
+      self.isFeedback = state;
+    };
+    return { updateTheme, updateFeedback };
   });
 
 export type State = Instance<typeof Store>;
 
 export function initializeStore(snapshot = null) {
   // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle
-  const _store = store ?? Store.create({ theme: Theme.LIGHT });
+  const _store = store ?? Store.create({ theme: Theme.LIGHT, isFeedback: false });
 
   // If your page has Next.js data fetching methods that use a Mobx store, it will
   // get hydrated here, check `pages/ssg.tsx` and `pages/ssr.tsx` for more details

@@ -1,0 +1,48 @@
+@import "styles/mixins";
+
+.modalShadow {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 4;
+}
+
+.modalContent {
+  background-color: var(--bg-theme-color);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 5;
+
+  @include isMobile {
+    top: 0;
+    left: 0;
+    transform: none;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: -8px;
+  right: -32px;
+  font-size: 32px;
+  border: none;
+  background-color: transparent;
+  color: var(--bg-theme-color);
+  padding: 0;
+  line-height: 32px;
+  transform: rotate(45deg);
+  cursor: pointer;
+
+  @include isMobile {
+    top: 0;
+    right: 8px;
+    color: var(--font-theme-color);
+  }
+}

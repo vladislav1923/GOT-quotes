@@ -12,4 +12,5 @@
 
     --bg-theme-color: var(--white-color);
     --font-theme-color: var(--black-color);
+    --link-color: var(--blue-color);
 }

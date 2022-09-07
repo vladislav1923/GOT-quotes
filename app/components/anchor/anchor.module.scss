@@ -1,0 +1,17 @@
+@import "styles/mixins";
+
+.fakeLink {
+  @include regularFont();
+  color: var(--link-color);
+  text-decoration: underline;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.link {
+  @include regularFont();
+  color: var(--link-color);
+  text-decoration: underline;
+}

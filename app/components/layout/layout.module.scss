@@ -10,11 +10,13 @@
 .lightTheme {
     --bg-theme-color: var(--white-color);
     --font-theme-color: var(--black-color);
+    --link-color: var(--blue-color);
 }
 
 .darkTheme {
     --bg-theme-color: var(--black-color);
     --font-theme-color: var(--white-color);
+    --link-color: var(--gray-color);
 }
 
 .main {

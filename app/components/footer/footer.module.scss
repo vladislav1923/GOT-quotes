@@ -6,19 +6,49 @@
     align-items: center;
     padding: 20px 32px;
     border-top: 1px solid var(--black-color);
+
+    @include isMobile {
+        padding: 20px;
+    }
 }
 
 .copyright {
     @include regularFont();
 }
 
-.link {
-    text-decoration: underline;
-}
-
 .buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 160px;
+}
+
+.feedbackLinkButton {
+    margin-right: 20px;
+
+    @include isMobile {
+        display: none;
+    }
+}
+
+.feedbackIconButton {
+    display: none;
+    background-color: var(--font-theme-color);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 20px;
+    mask-image: url("/message.svg");
+    height: 32px;
+    width: 32px;
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    @include isMobile {
+        display: block;
+    }
+}
+
+.logoLink {
+    margin-left: 24px;
 }

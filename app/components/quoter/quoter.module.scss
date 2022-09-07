@@ -11,8 +11,3 @@
 .quoterName {
     @include mediumFont();
 }
-
-.quoterLink {
-    @include regularFont();
-    color: var(--blue-color);
-}

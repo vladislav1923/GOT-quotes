@@ -6,6 +6,7 @@ import styles from './layout.module.scss';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { State, useStore } from '../../store/store';
+import Feedback from '../feedback/Feedback';
 
 type Props = {
   store?: State;
@@ -29,6 +30,8 @@ const Layout = observer(({ store, children }: Props) => {
         <Header />
         <main className={styles.main}>{ children }</main>
         <Footer store={store} />
+        <Feedback store={store} />
+        <div id="app-modal" />
       </div>
     </>
 
