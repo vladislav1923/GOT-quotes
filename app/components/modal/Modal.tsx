@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './modal.module.scss';
 
@@ -8,6 +8,13 @@ type Props = {
 };
 
 function Modal({ children, close }: Props) {
+  useEffect(() => {
+    document.documentElement.style.overflow = 'hidden';
+
+    return function onDestroy() {
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, []);
   const container = document.getElementById('app-modal') as HTMLDivElement;
   const element = (
     <>

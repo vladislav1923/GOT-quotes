@@ -1,3 +1,7 @@
+.quotesListBlock {
+    padding-top: 32px;
+}
+
 .quotesList {
     list-style: none;
     padding: 0;

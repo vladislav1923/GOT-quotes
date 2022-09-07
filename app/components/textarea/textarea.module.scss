@@ -1,0 +1,25 @@
+@import "styles/mixins";
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  @include regularFont();
+  color: var(--font-theme-color);
+  margin-bottom: 16px;
+}
+
+.textarea {
+  width: 100%;
+  resize: none;
+  height: 100px;
+}
+
+.error {
+  @include regularFont();
+  color: var(--fire-color);
+  margin-top: 8px;
+}

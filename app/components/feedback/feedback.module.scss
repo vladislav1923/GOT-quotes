@@ -1,0 +1,15 @@
+@import "styles/mixins";
+
+.form {
+  width: 500px;
+  padding: 32px;
+}
+
+.title {
+  @include mediumFont();
+  margin: 0 0 16px 0;
+}
+
+.textarea {
+  margin-bottom: 16px;
+}
