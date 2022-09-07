@@ -1,0 +1,35 @@
+@import "styles/mixins";
+
+.notification {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: var(--ice-color);
+  @include mediumFont();
+  color: var(--white-color);
+  padding: 16px;
+  z-index: 6;
+  animation-duration: .5s;
+  animation-name: slide;
+}
+
+.closeButton {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  font-size: 32px;
+  border: none;
+  background-color: transparent;
+  color: var(--white-color);
+  padding: 0;
+  line-height: 32px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+@keyframes slide {
+  from { right: -500px; }
+  to { right: 32px; }
+}

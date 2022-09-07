@@ -3,6 +3,7 @@ import {
   applySnapshot, Instance, types,
 } from 'mobx-state-tree';
 import { Theme } from 'react-toggle-theme';
+import Notification from '../interfaces/notificaton';
 
 let store: State | undefined;
 
@@ -10,6 +11,7 @@ const Store = types
   .model({
     theme: Theme.LIGHT,
     isFeedback: false,
+    notification: '',
   })
   .actions((self) => {
     const updateTheme = (theme: Theme) => {
@@ -20,14 +22,22 @@ const Store = types
       // eslint-disable-next-line no-param-reassign
       self.isFeedback = state;
     };
-    return { updateTheme, updateFeedback };
+    const updateNotification = (notification: string) => {
+      // eslint-disable-next-line no-param-reassign
+      self.notification = notification;
+    };
+    return { updateTheme, updateFeedback, updateNotification };
   });
 
 export type State = Instance<typeof Store>;
 
 export function initializeStore(snapshot = null) {
   // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle
-  const _store = store ?? Store.create({ theme: Theme.LIGHT, isFeedback: false });
+  const _store = store ?? Store.create({
+    theme: Theme.LIGHT,
+    isFeedback: false,
+    notification: '',
+  });
 
   // If your page has Next.js data fetching methods that use a Mobx store, it will
   // get hydrated here, check `pages/ssg.tsx` and `pages/ssr.tsx` for more details
