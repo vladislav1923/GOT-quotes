@@ -1,6 +1,6 @@
 import { SyntheticEvent, useEffect, useRef } from 'react';
-import { nanoid } from 'nanoid';
 import styles from './textarea.module.scss';
+import { generateId } from '../../helpers/generate-id/generate-id';
 
 type Props = {
   value: string;
@@ -14,7 +14,7 @@ function Textarea({
   value, label, placeholder, change, error,
 }: Props) {
   const ref = useRef<HTMLTextAreaElement>(null);
-  const id = nanoid();
+  const id = generateId();
 
   useEffect(() => {
     if (ref?.current) {

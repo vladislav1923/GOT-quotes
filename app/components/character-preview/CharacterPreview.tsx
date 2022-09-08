@@ -3,7 +3,6 @@ import { SyntheticEvent } from 'react';
 import { useRouter } from 'next/router';
 import styles from './character-preview.module.scss';
 import Character from '../../interfaces/character';
-import Anchor from '../anchor/Anchor';
 
 type Props = {
   character: Character;
