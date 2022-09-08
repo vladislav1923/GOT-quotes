@@ -19,7 +19,7 @@ export default function Ssg({ initialState }: Props) {
 export function getStaticProps() {
   const store = initializeStore();
 
-  store.update(Theme.LIGHT);
+  store.updateTheme(Theme.LIGHT);
 
   return { props: { initialState: getSnapshot(store) } };
 }
