@@ -1,57 +1,31 @@
-import { useMemo } from 'react';
-import {
-  applySnapshot, Instance, types,
-} from 'mobx-state-tree';
+/* eslint-disable no-param-reassign */
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { Theme } from 'react-toggle-theme';
-import Notification from '../interfaces/notificaton';
+import { State } from '../interfaces/state';
+import { initialState } from '../constants/initial-state';
 
-let store: State | undefined;
+export const appSlice = createSlice({
+  name: 'state',
+  initialState,
+  reducers: {
+    updateTheme: (state: State, action: PayloadAction<Theme>) => {
+      state.theme = action.payload;
+    },
+    updateFeedback: (state: State, action: PayloadAction<boolean>) => {
+      state.isFeedback = action.payload;
+    },
+    updateNotification: (state: State, action: PayloadAction<string | null>) => {
+      state.notification = action.payload;
+    },
+  },
+});
 
-const Store = types
-  .model({
-    theme: Theme.LIGHT,
-    isFeedback: false,
-    notification: '',
-  })
-  .actions((self) => {
-    const updateTheme = (theme: Theme) => {
-      // eslint-disable-next-line no-param-reassign
-      self.theme = theme;
-    };
-    const updateFeedback = (state: boolean) => {
-      // eslint-disable-next-line no-param-reassign
-      self.isFeedback = state;
-    };
-    const updateNotification = (notification: string) => {
-      // eslint-disable-next-line no-param-reassign
-      self.notification = notification;
-    };
-    return { updateTheme, updateFeedback, updateNotification };
-  });
+export const { updateTheme, updateFeedback, updateNotification } = appSlice.actions;
 
-export type State = Instance<typeof Store>;
+export const store = configureStore({
+  reducer: appSlice.reducer,
+});
 
-export function initializeStore(snapshot = null) {
-  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle
-  const _store = store ?? Store.create({
-    theme: Theme.LIGHT,
-    isFeedback: false,
-    notification: '',
-  });
-
-  // If your page has Next.js data fetching methods that use a Mobx store, it will
-  // get hydrated here, check `pages/ssg.tsx` and `pages/ssr.tsx` for more details
-  if (snapshot) {
-    applySnapshot(_store, snapshot);
-  }
-  // For SSG and SSR always create a new store
-  if (typeof window === 'undefined') return _store;
-  // Create the store once in the client
-  if (!store) store = _store;
-
-  return store;
-}
-
-export function useStore(initialState: any) {
-  return useMemo(() => initializeStore(initialState), [initialState]);
-}
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

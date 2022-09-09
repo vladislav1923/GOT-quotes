@@ -10,14 +10,12 @@
     "test": "jest && rm -rf .swc"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
-    "mobx": "^6.6.1",
-    "mobx-react": "^7.5.2",
-    "mobx-react-lite": "^3.4.0",
-    "mobx-state-tree": "^5.1.5",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-redux": "^8.0.2",
     "react-toggle-theme": "^1.0.0"
   },
   "devDependencies": {
@@ -28,6 +26,7 @@
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
+    "@types/react-redux": "^7.1.24",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "eslint": "^8.20.0",

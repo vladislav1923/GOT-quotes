@@ -1,26 +1,24 @@
-import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import styles from './notification.module.scss';
-import { State, useStore } from '../../store/store';
+import { updateNotification } from '../../store/store';
+import { State } from '../../interfaces/state';
 
-type Props = {
-  store?: State;
-};
-
-const Notification = observer(({ store }: Props) => {
-  const { notification, updateNotification } = useStore(store);
+function Notification() {
+  const notification = useAppSelector((state: State) => state.notification);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
     if (notification) {
-      timeout = setTimeout(() => updateNotification(''), 5000);
+      timeout = setTimeout(() => dispatch(updateNotification('')), 5000);
     }
     return function onDestroy() {
       if (timeout) {
         clearInterval(timeout);
       }
     };
-  }, [notification, updateNotification]);
+  }, [notification]);
 
   return (
     <div>
@@ -30,7 +28,7 @@ const Notification = observer(({ store }: Props) => {
                 <button
                   type="button"
                   className={styles.closeButton}
-                  onClick={() => updateNotification('')}
+                  onClick={() => dispatch(updateNotification(''))}
                 >
                   &#x2b;
                 </button>
@@ -40,6 +38,6 @@ const Notification = observer(({ store }: Props) => {
           }
     </div>
   );
-});
+}
 
 export default Notification;

@@ -1,21 +1,19 @@
 import React, { SyntheticEvent, useState } from 'react';
-import { observer } from 'mobx-react-lite';
 import { AxiosError } from 'axios';
 import Modal from '../modal/Modal';
-import { State, useStore } from '../../store/store';
 import styles from './feedback.module.scss';
 import Textarea from '../textarea/Textarea';
 import Button from '../button/Button';
 import ButtonSizesEnum from '../../enums/button-sizes.enum';
 import ButtonColorsEnum from '../../enums/button-colors.enum';
 import { sendFeedback } from '../../services/feedback/feedback.service';
+import { updateFeedback, updateNotification } from '../../store/store';
+import { State } from '../../interfaces/state';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
-type Props = {
-  store?: State;
-};
-
-const Feedback = observer(({ store }: Props) => {
-  const { isFeedback, updateFeedback, updateNotification } = useStore(store);
+function Feedback() {
+  const isFeedback = useAppSelector((state: State) => state.isFeedback);
+  const dispatch = useAppDispatch();
   const [value, setValue] = useState<string>('');
   const [error, setError] = useState<string>('');
 
@@ -33,8 +31,8 @@ const Feedback = observer(({ store }: Props) => {
     try {
       const response = await sendFeedback({ text: value });
       if (response.success) {
-        updateFeedback(false);
-        updateNotification('Feedback has been sent');
+        dispatch(updateFeedback(false));
+        dispatch(updateNotification('Feedback has been sent'));
         setValue('');
       } else {
         setError(response.message as string);
@@ -51,7 +49,7 @@ const Feedback = observer(({ store }: Props) => {
     <div>
       {isFeedback
           && (
-          <Modal close={() => updateFeedback(false)}>
+          <Modal close={() => dispatch(updateFeedback(false))}>
             <form className={styles.form} onSubmit={submitHandler}>
               <h2 className={styles.title}>Feedback</h2>
               <div className={styles.textarea}>
@@ -75,6 +73,6 @@ const Feedback = observer(({ store }: Props) => {
           )}
     </div>
   );
-});
+}
 
 export default Feedback;

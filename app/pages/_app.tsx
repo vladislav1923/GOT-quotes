@@ -1,18 +1,25 @@
 import '../styles/vars.css';
 import '../styles/fonts.css';
 import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import { Provider } from 'mobx-react';
-import { useStore } from '../store/store';
+import { Provider } from 'react-redux';
+import App from 'next/app';
+import { ErrorInfo } from 'react';
+import { store } from '../store/store';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const store = useStore(pageProps.initialState);
+class MyApp extends App {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    // eslint-disable-next-line no-console
+    console.log(error, errorInfo);
+  }
 
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    );
+  }
 }
 
 export default MyApp;

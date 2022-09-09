@@ -1,21 +1,20 @@
 import Head from 'next/head';
 import React from 'react';
 import { Theme } from 'react-toggle-theme';
-import { observer } from 'mobx-react-lite';
+import { useAppSelector } from '../../store/hooks';
 import styles from './layout.module.scss';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import { State, useStore } from '../../store/store';
 import Feedback from '../feedback/Feedback';
 import Notification from '../notification/Notification';
+import { State } from '../../interfaces/state';
 
 type Props = {
-  store?: State;
   children: React.ReactNode;
 };
 
-const Layout = observer(({ store, children }: Props) => {
-  const { theme } = useStore(store);
+function Layout({ children }: Props) {
+  const theme = useAppSelector((state: State) => state.theme);
   const themeClassName = theme === Theme.LIGHT ? styles.lightTheme : styles.darkTheme;
   return (
     <>
@@ -30,14 +29,14 @@ const Layout = observer(({ store, children }: Props) => {
       <div className={`${styles.container} ${themeClassName}`}>
         <Header />
         <main className={styles.main}>{ children }</main>
-        <Footer store={store} />
-        <Feedback store={store} />
-        <Notification store={store} />
+        <Footer />
+        <Feedback />
+        <Notification />
         <div id="app-modal" />
       </div>
     </>
 
   );
-});
+}
 
 export default Layout;

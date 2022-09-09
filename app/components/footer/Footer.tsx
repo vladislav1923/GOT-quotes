@@ -1,17 +1,15 @@
 import Image from 'next/image';
 import ToggleTheme, { Theme } from 'react-toggle-theme';
-import { observer } from 'mobx-react-lite';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import styles from './footer.module.scss';
-import { State, useStore } from '../../store/store';
 import API_SOURCE_URL from '../../constants/api-source-url';
 import Anchor from '../anchor/Anchor';
+import { updateTheme, updateFeedback } from '../../store/store';
+import { State } from '../../interfaces/state';
 
-type Props = {
-  store?: State;
-};
-
-const Footer = observer(({ store }: Props) => {
-  const { theme, updateTheme, updateFeedback } = useStore(store);
+function Footer() {
+  const theme = useAppSelector((state: State) => state.theme);
+  const dispatch = useAppDispatch();
 
   return (
     <footer className={styles.container}>
@@ -21,12 +19,20 @@ const Footer = observer(({ store }: Props) => {
       </span>
       <div className={styles.buttons}>
         <div className={styles.feedbackLinkButton}>
-          <Anchor text="Send Feedback" click={() => updateFeedback(true)} />
+          <Anchor
+            text="Send Feedback"
+            click={() => dispatch(updateFeedback(true))}
+          />
         </div>
-        <button type="button" aria-label="feedback-button" className={styles.feedbackIconButton} onClick={() => updateFeedback(true)} />
+        <button
+          type="button"
+          aria-label="feedback-button"
+          className={styles.feedbackIconButton}
+          onClick={() => dispatch(updateFeedback(true))}
+        />
         <ToggleTheme
           selectedTheme={theme as Theme}
-          onChange={(e: Theme) => updateTheme(e)}
+          onChange={(e: Theme) => dispatch(updateTheme(e))}
         />
         <a
           href="https://github.com/vladislav1923/gqt"
@@ -39,6 +45,6 @@ const Footer = observer(({ store }: Props) => {
       </div>
     </footer>
   );
-});
+}
 
 export default Footer;

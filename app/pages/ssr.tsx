@@ -1,25 +1,10 @@
-import { getSnapshot } from 'mobx-state-tree';
-import { Theme } from 'react-toggle-theme';
-import { initializeStore, State } from '../store/store';
 import Layout from '../components/layout/Layout';
 import Home from '../components/home/Home';
 
-type Props = {
-  initialState: State;
-};
-
-export default function Ssg({ initialState }: Props) {
+export default function Ssg() {
   return (
-    <Layout store={initialState}>
+    <Layout>
       <Home />
     </Layout>
   );
-}
-
-export function getServerSideProps() {
-  const store = initializeStore();
-
-  store.updateTheme(Theme.LIGHT);
-
-  return { props: { initialState: getSnapshot(store) } };
 }
