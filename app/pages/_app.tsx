@@ -4,7 +4,8 @@ import '../styles/globals.css';
 import { Provider } from 'react-redux';
 import App from 'next/app';
 import { ErrorInfo } from 'react';
-import { store } from '../store/store';
+import { setupStore } from '../store/store';
+import { initialState } from '../constants/initial-state';
 
 class MyApp extends App {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
@@ -14,6 +15,7 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
+    const store = setupStore(initialState);
     return (
       <Provider store={store}>
         <Component {...pageProps} />
