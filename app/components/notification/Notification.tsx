@@ -18,7 +18,7 @@ function Notification() {
         clearInterval(timeout);
       }
     };
-  }, [notification]);
+  }, [dispatch, notification]);
 
   return (
     <div>

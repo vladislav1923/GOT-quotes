@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore, createSlice, PreloadedState } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { Theme } from 'react-toggle-theme';
 import { State } from '../interfaces/state';
@@ -23,9 +23,18 @@ export const appSlice = createSlice({
 
 export const { updateTheme, updateFeedback, updateNotification } = appSlice.actions;
 
-export const store = configureStore({
-  reducer: appSlice.reducer,
-});
+// export const store = configureStore({
+//   reducer: appSlice.reducer,
+// });
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: appSlice.reducer,
+    preloadedState,
+  });
+};
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof appSlice.reducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore['dispatch'];
+// export type RootState = ReturnType<typeof store.getState>;
+// export type AppDispatch = typeof store.dispatch;
